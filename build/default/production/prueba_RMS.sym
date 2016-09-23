@@ -1,0 +1,207 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     @INTERRUPT_AREA
+018     @INTERRUPT_AREA
+019-01A strtok.save
+01B-01E _Randseed
+01F     address
+020.0   lcd_backlight
+021     lcd_gotoxy.data
+022-023 punto1
+024-027 tension
+028-02B tension_RMS
+02C     pulso_timer
+02D     contador
+02E-02F @ITOF.P1
+02E-031 @PRINTF_L32D_941FPFPF.P2
+02E     leer_ADC.ADC
+02E     @PSTRINGCN_941.P1
+02E-031 atan2.y
+02E     MAIN.@SCRATCH1
+02F-030 leer_ADC.dato
+02F     MAIN.@SCRATCH2
+02F     @PSTRINGCN_941.@SCRATCH1
+030     MAIN.@SCRATCH3
+030     @PSTRINGCN_941.@SCRATCH2
+031     leer_ADC.i
+031     MAIN.@SCRATCH4
+032-035 atan2.x
+032     @PRINTF_L32D_941FPFPF.P1
+032-035 sqrt.x
+032     leer_ADC.@SCRATCH1
+033     leer_ADC.@SCRATCH2
+033     @PRINTF_L32D_941FPFPF.@SCRATCH1
+034     @PRINTF_L32D_941FPFPF.@SCRATCH2
+035     @PRINTF_L32D_941FPFPF.@SCRATCH3
+036-039 atan2.z
+036-039 sqrt.y
+036     @PRINTF_L32D_941FPFPF.@SCRATCH4
+037     @PRINTF_L32D_941FPFPF.@SCRATCH5
+038     @PRINTF_L32D_941FPFPF.@SCRATCH6
+039     @PRINTF_L32D_941FPFPF.@SCRATCH7
+03A.0   atan2.sign
+03A-03D sqrt.res
+03A     @PRINTF_L32D_941FPFPF.@SCRATCH8
+03B-03E @MULFF.P1
+03B     LCD_PUTC.in_data
+03B-03E @FTOSD.P1
+03B     atan2.quad
+03B-03E @DIV3232.P1
+03C     LCD_PUTC.data
+03D     @delay_ms1.P1
+03D     lcd_gotoxy.x
+03E-03F sqrt.p
+03E     lcd_gotoxy.y
+03F-042 @MULFF.P1
+03F     lcd_send_byte.data
+03F-042 @DIV3232.P1
+03F     @FTOSD.@SCRATCH1
+040-043 @FLT.P1
+040-043 @ADDFF.P2
+040-043 @DIVFF.P3
+040     i2c_send_nibble.data
+040     lcd_send_byte.@SCRATCH1
+040     sqrt.@SCRATCH1
+041     @I2C_WRITE_1.P1
+041     sqrt.@SCRATCH2
+042     sqrt.@SCRATCH3
+043     @MULFF.@SCRATCH1
+043     sqrt.@SCRATCH4
+043     @DIV3232.@SCRATCH1
+044-047 @DIVFF.P1
+044-047 @FLT.P2
+044-047 @ADDFF.P3
+044     @MULFF.@SCRATCH2
+044     @DIV3232.@SCRATCH2
+045     @MULFF.@SCRATCH3
+045     @DIV3232.@SCRATCH3
+046     @DIV3232.@SCRATCH4
+047     @DIV3232.@SCRATCH5
+048     @ADDFF.@SCRATCH1
+048     @DIVFF.@SCRATCH1
+048     @FLT.@SCRATCH1
+049     @ADDFF.@SCRATCH2
+049     @DIVFF.@SCRATCH2
+049     @FLT.@SCRATCH2
+04A     @ADDFF.@SCRATCH3
+04A     @DIVFF.@SCRATCH3
+04B     @ADDFF.@SCRATCH4
+04B     @DIVFF.@SCRATCH4
+04C     @ADDFF.@SCRATCH5
+04C     @DIVFF.@SCRATCH5
+04D     @ADDFF.@SCRATCH6
+04D     @DIVFF.@SCRATCH6
+04E     @ADDFF.@SCRATCH7
+04F     @ADDFF.@SCRATCH8
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0000AE  interrtimer_0
+0000BC  @const1088.call
+0000C8  leer_ADC
+000130  @ITOF
+000168  @MULFF
+00025A  @DIVFF
+0003B4  @ADDFF
+00061E  @FLT
+000694  sqrt
+0007A0  @I2C_WRITE_1
+00080C  i2c_send_nibble
+000886  lcd_send_byte
+0008A8  lcd_gotoxy
+0008FE  @delay_ms1
+000926  lcd_clear
+00093A  LCD_PUTC
+0009A8  @FTOSD
+0009E8  @DIV3232
+000A76  @PRINTF_L32D_941FPFPF
+000BF2  @PSTRINGCN_941
+000C12  MAIN
+000C12  @cinit1
+000C26  @cinit2
+0136  StrtoulGO
+0136  StrtolGO
+
+Project Directory:
+    C:\Users\MARCOS\MPLABXProjects\Prueba_TENSIONRMS.X\
+
+Project Files:
+    prueba_RMS.c                                            [23-sep-16 10:01  CRC=FDDEB3A4]
+    ..\..\..\..\Program Files (x86)\PICC\devices\18F4550.h  [26-jun-15 10:09  CRC=281B1877]
+    ..\..\..\..\Program Files (x86)\PICC\drivers\stdio.h    [31-jul-07 14:24  CRC=4E4534F4]
+    ..\..\..\..\Program Files (x86)\PICC\drivers\string.h   [26-mar-15 12:34  CRC=C4814297]
+    ..\..\..\..\Program Files (x86)\PICC\drivers\stddef.h   [05-sep-14 11:47  CRC=897CEC6C]
+    ..\..\..\..\Program Files (x86)\PICC\drivers\ctype.h    [03-ene-08 14:55  CRC=2D1F019F]
+    ..\..\..\..\Program Files (x86)\PICC\drivers\stdlib.h   [07-dic-14 17:58  CRC=07F0FCBD]
+    i2c_Flex_LCD.h                                          [12-ene-14 15:46  CRC=9BBA501F]
+    MAX191.h                                                [23-sep-16 09:32  CRC=452BF67F]
+    ..\..\..\..\Program Files (x86)\PICC\drivers\math.h     [16-ene-15 10:40  CRC=6A8358B0]
+
+Source signature=AD3A266C
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=9028
+
+Units:
+    prueba_RMS (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+    Predefined symbols:
+       #define __18F4550 1
+
+Output Files:
+    XREF file:   build\default\production\prueba_RMS.xsym
+    Errors:      build\default\production\prueba_RMS.err
+    Ext Symbols: build\default\production\prueba_RMS.esym
+    INHX32:      build\default\production\prueba_RMS.hex
+    Symbols:     build\default\production\prueba_RMS.sym
+    List:        build\default\production\prueba_RMS.lst
+    Debug/COFF:  build\default\production\prueba_RMS.cof
+    Project:     prueba_RMS.ccspjt
+    Call Tree:   build\default\production\prueba_RMS.tre
+    Statistics:  build\default\production\prueba_RMS.STA

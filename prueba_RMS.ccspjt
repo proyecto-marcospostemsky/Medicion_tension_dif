@@ -1,0 +1,16 @@
+[PROJECT]
+Target=build\default\production\prueba_RMS.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.048
+Compiler=PCH
+[Target Data]
+FileList=prueba_RMS.c
+[build\default\production\prueba_RMS.c]
+Type=4
+[mru-list]
+1=build\default\production\prueba_RMS.c
+[build\default\debug\prueba_RMS.c]
+Type=4
+[Units]
+Count=1
+1=prueba_RMS (main)
