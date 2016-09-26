@@ -1,9 +1,9 @@
-CCS PCH C Compiler, Version 5.048, 5967               23-sep-16 10:01
+CCS PCH C Compiler, Version 5.048, 5967               26-sep-16 11:07
 
                Filename:   C:\Users\MARCOS\MPLABXProjects\Prueba_TENSIONRMS.X\build\default\production\prueba_RMS.lst
 
-               ROM used:   3518 bytes (11%)
-                           Largest free fragment is 29246
+               ROM used:   3522 bytes (11%)
+                           Largest free fragment is 29242
                RAM used:   50 (2%) at main() level
                            80 (4%) worst case
                Stack used: 1 locations (0 in main + 1 for interrupts)
@@ -100,7 +100,7 @@ CCS PCH C Compiler, Version 5.048, 5967               23-sep-16 10:01
 015E:  DECF   00,F
 0160:  BRA    0154
 0162:  BCF    01.7
-0164:  GOTO   0C58 (RETURN)
+0164:  GOTO   0C5A (RETURN)
 0168:  MOVF   3B,W
 016A:  BTFSC  FD8.2
 016C:  BRA    0250
@@ -972,7 +972,7 @@ CCS PCH C Compiler, Version 5.048, 5967               23-sep-16 10:01
 0BE6:  MOVFF  00,37
 0BEA:  DECFSZ 35,F
 0BEC:  BRA    0B0C
-0BEE:  GOTO   0DAC (RETURN)
+0BEE:  GOTO   0DAE (RETURN)
 0BF2:  TBLRD*+
 0BF4:  MOVFF  FF6,2F
 0BF8:  MOVFF  FF7,30
@@ -982,7 +982,7 @@ CCS PCH C Compiler, Version 5.048, 5967               23-sep-16 10:01
 0C06:  MOVFF  30,FF7
 0C0A:  DECFSZ 2E,F
 0C0C:  BRA    0BF2
-0C0E:  GOTO   0DBA (RETURN)
+0C0E:  GOTO   0DBC (RETURN)
 ....................  
 .................... #list 
 ....................  
@@ -3930,7 +3930,7 @@ CCS PCH C Compiler, Version 5.048, 5967               23-sep-16 10:01
 ....................     return(dato); 
 0124:  MOVFF  2F,01
 0128:  MOVFF  30,02
-012C:  GOTO   0C44 (RETURN)
+012C:  GOTO   0C46 (RETURN)
 .................... } 
 .................... #endif 
 ....................  
@@ -5046,7 +5046,7 @@ CCS PCH C Compiler, Version 5.048, 5967               23-sep-16 10:01
 0790:  MOVFF  3B,01
 0794:  MOVFF  3C,02
 0798:  MOVFF  3D,03
-079C:  GOTO   0D62 (RETURN)
+079C:  GOTO   0D70 (RETURN)
 .................... } 
 .................... //Overloaded functions for sqrt() for PCD 
 .................... // Overloaded function sqrt() for data type - Float48 
@@ -6258,7 +6258,7 @@ CCS PCH C Compiler, Version 5.048, 5967               23-sep-16 10:01
 .................... int desfase;*/ 
 .................... long punto1; 
 .................... float tension, tension_RMS; 
-.................... int pulso_timer,contador; 
+.................... int pulso_timer=1,contador; 
 ....................  
 ....................  
 .................... #INT_RTCC                // interrupcion para demora de 500 us 
@@ -6280,166 +6280,169 @@ CCS PCH C Compiler, Version 5.048, 5967               23-sep-16 10:01
 0C14:  BCF    FD0.7
 0C16:  BSF    07.7
 0C18:  BSF    20.0
-0C1A:  MOVF   FC1,W
-0C1C:  ANDLW  C0
-0C1E:  IORLW  0F
-0C20:  MOVWF  FC1
-0C22:  MOVLW  07
-0C24:  MOVWF  FB4
-0C26:  CLRF   19
-0C28:  CLRF   1A
-0C2A:  CLRF   21
+0C1A:  MOVLW  01
+0C1C:  MOVWF  2C
+0C1E:  MOVF   FC1,W
+0C20:  ANDLW  C0
+0C22:  IORLW  0F
+0C24:  MOVWF  FC1
+0C26:  MOVLW  07
+0C28:  MOVWF  FB4
+0C2A:  CLRF   19
+0C2C:  CLRF   1A
+0C2E:  CLRF   21
 ....................     //lcd_init(); 
 ....................     set_tris_a(0xF9); 
-0C2C:  MOVLW  F9
-0C2E:  MOVWF  F92
+0C30:  MOVLW  F9
+0C32:  MOVWF  F92
 ....................      
 ....................     while (contador < 60 && pulso_timer==1 ){ 
-0C30:  MOVF   2D,W
-0C32:  SUBLW  3B
-0C34:  BTFSS  FD8.0
-0C36:  BRA    0D78
-0C38:  DECFSZ 2C,W
-0C3A:  BRA    0D78
+0C34:  MOVF   2D,W
+0C36:  SUBLW  3B
+0C38:  BNC   0D28
+0C3A:  DECFSZ 2C,W
+0C3C:  BRA    0D28
 ....................     punto1= leer_ADC(2); 
-0C3C:  MOVLW  02
-0C3E:  MOVWF  2E
-0C40:  GOTO   00C8
-0C44:  MOVFF  02,23
-0C48:  MOVFF  01,22
+0C3E:  MOVLW  02
+0C40:  MOVWF  2E
+0C42:  GOTO   00C8
+0C46:  MOVFF  02,23
+0C4A:  MOVFF  01,22
 ....................     tension=punto1; 
-0C4C:  MOVFF  23,2F
-0C50:  MOVFF  22,2E
-0C54:  GOTO   0130
-0C58:  MOVFF  03,27
-0C5C:  MOVFF  02,26
-0C60:  MOVFF  01,25
-0C64:  MOVFF  00,24
+0C4E:  MOVFF  23,2F
+0C52:  MOVFF  22,2E
+0C56:  GOTO   0130
+0C5A:  MOVFF  03,27
+0C5E:  MOVFF  02,26
+0C62:  MOVFF  01,25
+0C66:  MOVFF  00,24
 ....................     tension= (tension*5)/4096; 
-0C68:  MOVFF  27,3E
-0C6C:  MOVFF  26,3D
-0C70:  MOVFF  25,3C
-0C74:  MOVFF  24,3B
-0C78:  CLRF   42
-0C7A:  CLRF   41
-0C7C:  MOVLW  20
-0C7E:  MOVWF  40
-0C80:  MOVLW  81
-0C82:  MOVWF  3F
-0C84:  CALL   0168
-0C88:  MOVFF  03,31
-0C8C:  MOVFF  02,30
-0C90:  MOVFF  01,2F
-0C94:  MOVFF  00,2E
-0C98:  MOVFF  03,43
-0C9C:  MOVFF  02,42
-0CA0:  MOVFF  01,41
-0CA4:  MOVFF  00,40
-0CA8:  CLRF   47
-0CAA:  CLRF   46
-0CAC:  CLRF   45
-0CAE:  MOVLW  8B
-0CB0:  MOVWF  44
-0CB2:  CALL   025A
-0CB6:  MOVFF  03,27
-0CBA:  MOVFF  02,26
-0CBE:  MOVFF  01,25
-0CC2:  MOVFF  00,24
+0C6A:  MOVFF  27,3E
+0C6E:  MOVFF  26,3D
+0C72:  MOVFF  25,3C
+0C76:  MOVFF  24,3B
+0C7A:  CLRF   42
+0C7C:  CLRF   41
+0C7E:  MOVLW  20
+0C80:  MOVWF  40
+0C82:  MOVLW  81
+0C84:  MOVWF  3F
+0C86:  CALL   0168
+0C8A:  MOVFF  03,31
+0C8E:  MOVFF  02,30
+0C92:  MOVFF  01,2F
+0C96:  MOVFF  00,2E
+0C9A:  MOVFF  03,43
+0C9E:  MOVFF  02,42
+0CA2:  MOVFF  01,41
+0CA6:  MOVFF  00,40
+0CAA:  CLRF   47
+0CAC:  CLRF   46
+0CAE:  CLRF   45
+0CB0:  MOVLW  8B
+0CB2:  MOVWF  44
+0CB4:  CALL   025A
+0CB8:  MOVFF  03,27
+0CBC:  MOVFF  02,26
+0CC0:  MOVFF  01,25
+0CC4:  MOVFF  00,24
 ....................     tension_RMS=tension_RMS+ tension * tension;       //calcula tension eficaz 
-0CC6:  MOVFF  27,3E
-0CCA:  MOVFF  26,3D
-0CCE:  MOVFF  25,3C
-0CD2:  MOVFF  24,3B
-0CD6:  MOVFF  27,42
-0CDA:  MOVFF  26,41
-0CDE:  MOVFF  25,40
-0CE2:  MOVFF  24,3F
-0CE6:  CALL   0168
-0CEA:  BCF    FD8.1
-0CEC:  MOVFF  2B,43
-0CF0:  MOVFF  2A,42
-0CF4:  MOVFF  29,41
-0CF8:  MOVFF  28,40
-0CFC:  MOVFF  03,47
-0D00:  MOVFF  02,46
-0D04:  MOVFF  01,45
-0D08:  MOVFF  00,44
-0D0C:  CALL   03B4
-0D10:  MOVFF  03,2B
-0D14:  MOVFF  02,2A
-0D18:  MOVFF  01,29
-0D1C:  MOVFF  00,28
-....................     tension_RMS= SQRT(tension_RMS/60); 
-0D20:  MOVFF  2B,43
-0D24:  MOVFF  2A,42
-0D28:  MOVFF  29,41
-0D2C:  MOVFF  28,40
-0D30:  CLRF   47
-0D32:  CLRF   46
-0D34:  MOVLW  70
-0D36:  MOVWF  45
-0D38:  MOVLW  84
-0D3A:  MOVWF  44
-0D3C:  CALL   025A
-0D40:  MOVFF  03,31
-0D44:  MOVFF  02,30
-0D48:  MOVFF  01,2F
-0D4C:  MOVFF  00,2E
-0D50:  MOVFF  03,35
-0D54:  MOVFF  02,34
-0D58:  MOVFF  01,33
-0D5C:  MOVFF  00,32
-0D60:  BRA    0694
-0D62:  MOVFF  03,2B
-0D66:  MOVFF  02,2A
-0D6A:  MOVFF  01,29
-0D6E:  MOVFF  00,28
+0CC8:  MOVFF  27,3E
+0CCC:  MOVFF  26,3D
+0CD0:  MOVFF  25,3C
+0CD4:  MOVFF  24,3B
+0CD8:  MOVFF  27,42
+0CDC:  MOVFF  26,41
+0CE0:  MOVFF  25,40
+0CE4:  MOVFF  24,3F
+0CE8:  CALL   0168
+0CEC:  BCF    FD8.1
+0CEE:  MOVFF  2B,43
+0CF2:  MOVFF  2A,42
+0CF6:  MOVFF  29,41
+0CFA:  MOVFF  28,40
+0CFE:  MOVFF  03,47
+0D02:  MOVFF  02,46
+0D06:  MOVFF  01,45
+0D0A:  MOVFF  00,44
+0D0E:  CALL   03B4
+0D12:  MOVFF  03,2B
+0D16:  MOVFF  02,2A
+0D1A:  MOVFF  01,29
+0D1E:  MOVFF  00,28
 ....................     contador++; 
-0D72:  INCF   2D,F
+0D22:  INCF   2D,F
 ....................     pulso_timer=0; 
-0D74:  CLRF   2C
-0D76:  BRA    0C30
+0D24:  CLRF   2C
+0D26:  BRA    0C34
 ....................     } 
 ....................     if (contador==60){ 
-0D78:  MOVF   2D,W
-0D7A:  SUBLW  3C
-0D7C:  BNZ   0DC0
+0D28:  MOVF   2D,W
+0D2A:  SUBLW  3C
+0D2C:  BNZ   0DC4
+....................         tension_RMS= SQRT(tension_RMS/60); 
+0D2E:  MOVFF  2B,43
+0D32:  MOVFF  2A,42
+0D36:  MOVFF  29,41
+0D3A:  MOVFF  28,40
+0D3E:  CLRF   47
+0D40:  CLRF   46
+0D42:  MOVLW  70
+0D44:  MOVWF  45
+0D46:  MOVLW  84
+0D48:  MOVWF  44
+0D4A:  CALL   025A
+0D4E:  MOVFF  03,31
+0D52:  MOVFF  02,30
+0D56:  MOVFF  01,2F
+0D5A:  MOVFF  00,2E
+0D5E:  MOVFF  03,35
+0D62:  MOVFF  02,34
+0D66:  MOVFF  01,33
+0D6A:  MOVFF  00,32
+0D6E:  BRA    0694
+0D70:  MOVFF  03,2B
+0D74:  MOVFF  02,2A
+0D78:  MOVFF  01,29
+0D7C:  MOVFF  00,28
 ....................         lcd_gotoxy(1,1); 
-0D7E:  MOVLW  01
-0D80:  MOVWF  3D
-0D82:  MOVWF  3E
-0D84:  RCALL  08A8
+0D80:  MOVLW  01
+0D82:  MOVWF  3D
+0D84:  MOVWF  3E
+0D86:  RCALL  08A8
 ....................         printf (LCD_PUTC, "T=\%f V     ",tension_RMS); 
-0D86:  MOVLW  54
-0D88:  MOVWF  3B
-0D8A:  RCALL  093A
-0D8C:  MOVLW  3D
-0D8E:  MOVWF  3B
-0D90:  RCALL  093A
-0D92:  MOVLW  89
-0D94:  MOVWF  FE9
-0D96:  MOVFF  2B,31
-0D9A:  MOVFF  2A,30
-0D9E:  MOVFF  29,2F
-0DA2:  MOVFF  28,2E
-0DA6:  MOVLW  02
-0DA8:  MOVWF  32
-0DAA:  BRA    0A76
-0DAC:  MOVLW  C0
-0DAE:  MOVWF  FF6
-0DB0:  MOVLW  00
-0DB2:  MOVWF  FF7
-0DB4:  MOVLW  07
-0DB6:  MOVWF  2E
-0DB8:  BRA    0BF2
+0D88:  MOVLW  54
+0D8A:  MOVWF  3B
+0D8C:  RCALL  093A
+0D8E:  MOVLW  3D
+0D90:  MOVWF  3B
+0D92:  RCALL  093A
+0D94:  MOVLW  89
+0D96:  MOVWF  FE9
+0D98:  MOVFF  2B,31
+0D9C:  MOVFF  2A,30
+0DA0:  MOVFF  29,2F
+0DA4:  MOVFF  28,2E
+0DA8:  MOVLW  02
+0DAA:  MOVWF  32
+0DAC:  BRA    0A76
+0DAE:  MOVLW  C0
+0DB0:  MOVWF  FF6
+0DB2:  MOVLW  00
+0DB4:  MOVWF  FF7
+0DB6:  MOVLW  07
+0DB8:  MOVWF  2E
+0DBA:  BRA    0BF2
 ....................         delay_ms(40); 
-0DBA:  MOVLW  28
-0DBC:  MOVWF  3D
-0DBE:  RCALL  08FE
+0DBC:  MOVLW  28
+0DBE:  MOVWF  3D
+0DC0:  RCALL  08FE
+....................         contador=0; 
+0DC2:  CLRF   2D
 ....................     } 
 ....................  
 .................... } 
-0DC0:  SLEEP 
+0DC4:  SLEEP 
 
 Configuration Fuses:
    Word  1: 4C02   PLL3 CPUDIV1 NOUSBDIV HS FCMEN NOIESO

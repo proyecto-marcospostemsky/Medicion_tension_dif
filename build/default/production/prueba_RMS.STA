@@ -1,6 +1,6 @@
 
-ROM used:   3518/32768 (11%)
-            3518/32768 (11%) including unused fragments
+ROM used:   3522/32768 (11%)
+            3522/32768 (11%) including unused fragments
 
             0.7 Average locations per line
             4.9 Average locations per statement
@@ -13,7 +13,7 @@ Stack size: 31
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   51    17   2  prueba_RMS.c
+   52    18   2  prueba_RMS.c
   839     0   0  ..\..\..\..\Program Files (x86)\PICC\devices\18F4550.h
    37     0   0  ..\..\..\..\Program Files (x86)\PICC\drivers\stdio.h
   435     0   0  ..\..\..\..\Program Files (x86)\PICC\drivers\string.h
@@ -24,7 +24,7 @@ Lines Stmts  %   Files
    42    15   2  MAX191.h
  2227   257  36  ..\..\..\..\Program Files (x86)\PICC\drivers\math.h
 ----- -----
- 5253   720 Total
+ 5254   721 Total
 
 Page ROM  %  RAM    Vol Diff  Functions:
 ---- --- --- ---    --- ----  ----------
@@ -43,7 +43,7 @@ Page ROM  %  RAM    Vol Diff  Functions:
 0    118   2   10             @FLT
 0    268   4   18    510 10.6  sqrt
 0     14   0    0     29  1.2  interrtimer_0
-0    432   6    4    472  6.5  MAIN
+0    436   6    4    499  6.5  MAIN
 0     12   0    0             @const1088
 0     64   1    5             @FTOSD
 0    142   2   13             @DIV3232
@@ -53,12 +53,12 @@ Page ROM  %  RAM    Vol Diff  Functions:
 
 Program metrics:
     Functions               9
-    Statements              720
+    Statements              721
     Comments                1063
-    Volume (V)              4634
-    Difficulty (D)          40.2
-    Effort to implement (E) 186472
-    Time to implement (T)   2 hours, 53 minutes
+    Volume (V)              4673
+    Difficulty (D)          40.3
+    Effort to implement (E) 188198
+    Time to implement (T)   2 hours, 54 minutes
     Est Delivered Bugs (B)  1
     Cyclomatic Complexity   17
     Maintainability (MI)    22
@@ -68,7 +68,7 @@ Program metrics:
 00000-00002     4  0  
 00004-00006     0  4  
 00008-000AC   166  0  
-000AE-07FFE  3348  29246  
+000AE-07FFE  3352  29242  
 
 
 

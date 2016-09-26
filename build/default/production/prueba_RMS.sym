@@ -156,7 +156,7 @@ ROM Allocation:
 000BF2  @PSTRINGCN_941
 000C12  MAIN
 000C12  @cinit1
-000C26  @cinit2
+000C2A  @cinit2
 0136  StrtoulGO
 0136  StrtolGO
 
@@ -164,7 +164,7 @@ Project Directory:
     C:\Users\MARCOS\MPLABXProjects\Prueba_TENSIONRMS.X\
 
 Project Files:
-    prueba_RMS.c                                            [23-sep-16 10:01  CRC=FDDEB3A4]
+    prueba_RMS.c                                            [26-sep-16 11:07  CRC=0C9D570C]
     ..\..\..\..\Program Files (x86)\PICC\devices\18F4550.h  [26-jun-15 10:09  CRC=281B1877]
     ..\..\..\..\Program Files (x86)\PICC\drivers\stdio.h    [31-jul-07 14:24  CRC=4E4534F4]
     ..\..\..\..\Program Files (x86)\PICC\drivers\string.h   [26-mar-15 12:34  CRC=C4814297]
@@ -175,10 +175,10 @@ Project Files:
     MAX191.h                                                [23-sep-16 09:32  CRC=452BF67F]
     ..\..\..\..\Program Files (x86)\PICC\drivers\math.h     [16-ene-15 10:40  CRC=6A8358B0]
 
-Source signature=AD3A266C
+Source signature=BBF8C9D4
 Program memory checksum=0000
 Program memory CRC=0000
-Hex file CRC=9028
+Hex file CRC=B75A
 
 Units:
     prueba_RMS (main)
