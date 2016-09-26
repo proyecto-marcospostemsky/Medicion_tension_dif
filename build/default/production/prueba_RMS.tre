@@ -1,6 +1,69 @@
 ÀÄPrueba_TENSIONRMS
-   ÃÄMAIN  0/436  Ram=4
+   ÃÄMAIN  0/472  Ram=4
    ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄlcd_init  0/92  Ram=0
+   ³  ³  ÃÄ@delay_ms1  0/40  Ram=1
+   ³  ³  ÃÄlcd_send_byte  0/34  Ram=2
+   ³  ³  ³  ÃÄi2c_send_nibble  0/122  Ram=1
+   ³  ³  ³  ³  ÃÄ@I2C_WRITE_1  0/108  Ram=1
+   ³  ³  ³  ³  ÀÄ@I2C_WRITE_1  0/108  Ram=1
+   ³  ³  ³  ÀÄi2c_send_nibble  0/122  Ram=1
+   ³  ³  ³     ÀÄ*
+   ³  ³  ÃÄlcd_send_byte  0/34  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_send_byte  0/34  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_send_byte  0/34  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_send_byte  0/34  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_send_byte  0/34  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_send_byte  0/34  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_send_byte  0/34  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_send_byte  0/34  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_send_byte  0/34  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_send_byte  0/34  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_send_byte  0/34  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_send_byte  0/34  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_send_byte  0/34  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_send_byte  0/34  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÀÄlcd_clear  0/18  Ram=0
+   ³  ³     ÃÄlcd_send_byte  0/34  Ram=2
+   ³  ³     ³  ÀÄ*
+   ³  ³     ÃÄlcd_send_byte  0/34  Ram=2
+   ³  ³     ³  ÀÄ*
+   ³  ³     ÀÄ@delay_ms1  0/40  Ram=1
+   ³  ÃÄlcd_gotoxy  0/86  Ram=2
+   ³  ³  ÃÄlcd_send_byte  0/34  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÀÄlcd_send_byte  0/34  Ram=2
+   ³  ³     ÀÄ*
+   ³  ÃÄ@PSTRINGC_941  0/34  Ram=2
+   ³  ³  ÀÄLCD_PUTC  0/110  Ram=2
+   ³  ³     ÃÄlcd_clear  0/18  Ram=0
+   ³  ³     ³  ÀÄ*
+   ³  ³     ÃÄlcd_gotoxy  0/86  Ram=2
+   ³  ³     ³  ÀÄ*
+   ³  ³     ÃÄlcd_gotoxy  0/86  Ram=2
+   ³  ³     ³  ÀÄ*
+   ³  ³     ÃÄlcd_gotoxy  0/86  Ram=2
+   ³  ³     ³  ÀÄ*
+   ³  ³     ÃÄlcd_gotoxy  0/86  Ram=2
+   ³  ³     ³  ÀÄ*
+   ³  ³     ÃÄlcd_send_byte  0/34  Ram=2
+   ³  ³     ³  ÀÄ*
+   ³  ³     ÀÄlcd_send_byte  0/34  Ram=2
+   ³  ³        ÀÄ*
    ³  ÃÄleer_ADC  0/104  Ram=6
    ³  ÃÄ@ITOF  0/56  Ram=2
    ³  ÃÄ@MULFF  0/242  Ram=11
@@ -14,36 +77,12 @@
    ³  ³  ÃÄ@ADDFF  0/618  Ram=16
    ³  ³  ÀÄ@FLT  0/118  Ram=10
    ³  ÃÄlcd_gotoxy  0/86  Ram=2
-   ³  ³  ÃÄlcd_send_byte  0/34  Ram=2
-   ³  ³  ³  ÃÄi2c_send_nibble  0/122  Ram=1
-   ³  ³  ³  ³  ÃÄ@I2C_WRITE_1  0/108  Ram=1
-   ³  ³  ³  ³  ÀÄ@I2C_WRITE_1  0/108  Ram=1
-   ³  ³  ³  ÀÄi2c_send_nibble  0/122  Ram=1
-   ³  ³  ³     ÀÄ*
-   ³  ³  ÀÄlcd_send_byte  0/34  Ram=2
-   ³  ³     ÀÄ*
-   ³  ÃÄLCD_PUTC  0/110  Ram=2
-   ³  ³  ÃÄlcd_clear  0/20  Ram=0
-   ³  ³  ³  ÃÄlcd_send_byte  0/34  Ram=2
-   ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ÃÄlcd_send_byte  0/34  Ram=2
-   ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ÀÄ@delay_ms1  0/40  Ram=1
-   ³  ³  ÃÄlcd_gotoxy  0/86  Ram=2
-   ³  ³  ³  ÀÄ*
-   ³  ³  ÃÄlcd_gotoxy  0/86  Ram=2
-   ³  ³  ³  ÀÄ*
-   ³  ³  ÃÄlcd_gotoxy  0/86  Ram=2
-   ³  ³  ³  ÀÄ*
-   ³  ³  ÃÄlcd_gotoxy  0/86  Ram=2
-   ³  ³  ³  ÀÄ*
-   ³  ³  ÃÄlcd_send_byte  0/34  Ram=2
-   ³  ³  ³  ÀÄ*
-   ³  ³  ÀÄlcd_send_byte  0/34  Ram=2
-   ³  ³     ÀÄ*
+   ³  ³  ÀÄ*
    ³  ÃÄLCD_PUTC  0/110  Ram=2
    ³  ³  ÀÄ*
-   ³  ÃÄ@PRINTF_L32D_941FPFPF  0/380  Ram=13
+   ³  ÃÄLCD_PUTC  0/110  Ram=2
+   ³  ³  ÀÄ*
+   ³  ÃÄ@PRINTF_L32D_941FPFPF  0/386  Ram=13
    ³  ³  ÃÄ@MULFF  0/242  Ram=11
    ³  ³  ÃÄ@FTOSD  0/64  Ram=5
    ³  ³  ÃÄ@DIV3232  0/142  Ram=13
@@ -56,7 +95,7 @@
    ³  ³  ÃÄLCD_PUTC  0/110  Ram=2
    ³  ³  ³  ÀÄ*
    ³  ³  ÀÄ@DIV3232  0/142  Ram=13
-   ³  ÃÄ@PSTRINGCN_941  0/32  Ram=3
+   ³  ÃÄ@PSTRINGCN_941  0/34  Ram=3
    ³  ³  ÀÄLCD_PUTC  0/110  Ram=2
    ³  ³     ÀÄ*
    ³  ÀÄ@delay_ms1  0/40  Ram=1

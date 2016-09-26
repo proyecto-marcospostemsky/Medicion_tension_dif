@@ -19,7 +19,7 @@ int control_V, control_I;
 int desfase;*/
 long punto1;
 float tension, tension_RMS;
-int pulso_timer=1,contador;
+int pulso_timer=1,contador=0;
 
 
 #INT_RTCC                // interrupcion para demora de 500 us
@@ -29,23 +29,26 @@ void interrtimer_0(){
    }
 
 void main() {
-    //lcd_init();
-    set_tris_a(0xF9);
-    
-    while (contador < 60 && pulso_timer==1 ){
+    lcd_init();
+    lcd_gotoxy(1,1);
+    printf (LCD_PUTC, "pruebtension ");
+    set_tris_a(0xF9); 
+    while(1){
+    while (contador < 60  ){
     punto1= leer_ADC(2);
     tension=punto1;
     tension= (tension*5)/4096;
     tension_RMS=tension_RMS+ tension * tension;       //calcula tension eficaz
     contador++;
-    pulso_timer=0;
+    //pulso_timer=0;
     }
+    
     if (contador==60){
         tension_RMS= SQRT(tension_RMS/60);
-        lcd_gotoxy(1,1);
+        lcd_gotoxy(1,2);
         printf (LCD_PUTC, "T=\%f V     ",tension_RMS);
         delay_ms(40);
         contador=0;
     }
-
+    }
 }

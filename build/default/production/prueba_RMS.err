@@ -1,3 +1,4 @@
-      Memory usage:   ROM=11%      RAM=2% - 4%
-      0 Errors,  0 Warnings.
+C:\Users\MARCOS\MPLABXProjects\Prueba_TENSIONRMS.X\prueba_RMS.c:36:1:  Warning#203  Condition always TRUE
+      Memory usage:   ROM=11%      RAM=3% - 4%
+      0 Errors,  1 Warnings.
 Build Successful.
