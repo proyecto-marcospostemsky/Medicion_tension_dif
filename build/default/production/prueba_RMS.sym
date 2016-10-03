@@ -35,11 +35,11 @@
 02C     pulso_timer
 02D     contador
 02E-02F @sprintf_string
-030-031 @ITOF.P1
+030     leer_ADC.ADC
+030-033 @PRINTF_L32D_941FPFPF.P1
 030     @PSTRINGCN_941.P2
 030-033 atan2.y
-030-033 @PRINTF_L32D_941FPFPF.P1
-030     leer_ADC.ADC
+030-031 @ITOF.P1
 030     MAIN.@SCRATCH1
 030     @PSTRINGC_941.@SCRATCH1
 031-032 leer_ADC.dato
@@ -50,41 +50,41 @@
 032     @PSTRINGCN_941.@SCRATCH2
 033     leer_ADC.i
 033     MAIN.@SCRATCH4
-034-037 sqrt.x
-034     @PRINTF_L32D_941FPFPF.P1
 034-037 atan2.x
+034     @PRINTF_L32D_941FPFPF.P1
+034-037 sqrt.x
 034     leer_ADC.@SCRATCH1
 035     leer_ADC.@SCRATCH2
 035     @PRINTF_L32D_941FPFPF.@SCRATCH1
 036     @PRINTF_L32D_941FPFPF.@SCRATCH2
 037     @PRINTF_L32D_941FPFPF.@SCRATCH3
-038-03B atan2.z
 038-03B sqrt.y
+038-03B atan2.z
 038     @PRINTF_L32D_941FPFPF.@SCRATCH4
 039     @PRINTF_L32D_941FPFPF.@SCRATCH5
 03A     @PRINTF_L32D_941FPFPF.@SCRATCH6
 03B     @PRINTF_L32D_941FPFPF.@SCRATCH7
-03C-03F sqrt.res
 03C.0   atan2.sign
+03C-03F sqrt.res
 03C     @PRINTF_L32D_941FPFPF.@SCRATCH8
-03D-040 @FTOSD.P1
-03D     atan2.quad
-03D-040 @DIV3232.P1
-03D-040 @MULFF.P2
+03D-040 @MULFF.P1
 03D     LCD_PUTC.in_data
+03D-040 @FTOSD.P1
+03D-040 @DIV3232.P2
+03D     atan2.quad
 03E     LCD_PUTC.data
 03F     @delay_ms1.P1
 03F     lcd_gotoxy.x
-040     lcd_gotoxy.y
 040-041 sqrt.p
-041-044 @DIV3232.P1
-041-044 @MULFF.P2
+040     lcd_gotoxy.y
+041-044 @MULFF.P1
 041     lcd_send_byte.data
+041-044 @DIV3232.P1
 041     @FTOSD.@SCRATCH1
 042-045 @ADDFF.P1
+042-045 @FLT.P2
 042     i2c_send_nibble.data
 042-045 @DIVFF.P1
-042-045 @FLT.P2
 042     lcd_send_byte.@SCRATCH1
 042     sqrt.@SCRATCH1
 043     @I2C_WRITE_1.P1
@@ -93,8 +93,8 @@
 045     @MULFF.@SCRATCH1
 045     sqrt.@SCRATCH4
 045     @DIV3232.@SCRATCH1
-046-049 @ADDFF.P1
-046-049 @DIVFF.P2
+046-049 @DIVFF.P1
+046-049 @ADDFF.P2
 046-049 @FLT.P3
 046     @MULFF.@SCRATCH2
 046     @DIV3232.@SCRATCH2
@@ -121,48 +121,48 @@
 F83     PSP_DATA
 FB4.6   C1OUT
 FB4.7   C2OUT
-FBB     CCP_2
 FBB     CCP_2_LOW
+FBB     CCP_2
 FBC     CCP_2_HIGH
-FBE     CCP_1_LOW
 FBE     CCP_1
+FBE     CCP_1_LOW
 FBF     CCP_1_HIGH
 FE1-FE2 @WRITE_PACKED_MEMORY.P1
 FE1-FE2 @READ_PACKED_MEMORY.P2
-FE9-FEA @READ_PROGRAM_MEMORY.P1
-FE9-FEA @WRITE_PACKED_MEMORY.P2
-FE9-FEA @READ_PACKED_MEMORY.P3
-FE9-FEA @WRITE_PROGRAM_MEMORY.P4
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
 FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
 FF6-FF8 @READ_PROGRAM_MEMORY.P2
 
 ROM Allocation:
 0000AE  interrtimer_0
-0000BC  @const1088.call
-0000CA  @const1093.call
-0000D6  @delay_ms1
-0000FE  @I2C_WRITE_1
-00016A  i2c_send_nibble
-0001E4  lcd_send_byte
-000206  lcd_clear
-000218  lcd_init
-000274  lcd_gotoxy
-0002CA  LCD_PUTC
-000338  @PSTRINGC_941
-00035A  leer_ADC
-0003C2  @ITOF
-0003FA  @MULFF
-0004EC  @DIVFF
-000646  @ADDFF
-0008B0  @FLT
-000926  sqrt
-000A32  @FTOSD
-000A72  @DIV3232
-000B00  @PRINTF_L32D_941FPFPF
-000C82  @PSTRINGCN_941
-000CA4  @cinit1
-000CA4  MAIN
-000CC2  @cinit2
+0000C0  @const1090.call
+0000CE  @const1095.call
+0000DA  @delay_ms1
+000102  @I2C_WRITE_1
+00016E  i2c_send_nibble
+0001E8  lcd_send_byte
+00020A  lcd_clear
+00021C  lcd_init
+000278  lcd_gotoxy
+0002CE  LCD_PUTC
+00033C  @PSTRINGC_941
+00035E  leer_ADC
+0003C6  @ITOF
+0003FE  @DIVFF
+000558  @ADDFF
+0007C2  @MULFF
+0008B4  @FLT
+00092A  sqrt
+000A36  @FTOSD
+000A76  @DIV3232
+000B04  @PRINTF_L32D_941FPFPF
+000C86  @PSTRINGCN_941
+000CA8  MAIN
+000CA8  @cinit1
+000CCE  @cinit2
 0136  StrtoulGO
 0136  StrtolGO
 
@@ -170,7 +170,7 @@ Project Directory:
     C:\Users\MARCOS\MPLABXProjects\Prueba_TENSIONRMS.X\
 
 Project Files:
-    prueba_RMS.c                                            [26-sep-16 11:57  CRC=5DF6906E]
+    prueba_RMS.c                                            [02-oct-16 16:42  CRC=96C23C07]
     ..\..\..\..\Program Files (x86)\PICC\devices\18F4550.h  [26-jun-15 10:09  CRC=281B1877]
     ..\..\..\..\Program Files (x86)\PICC\drivers\stdio.h    [31-jul-07 14:24  CRC=4E4534F4]
     ..\..\..\..\Program Files (x86)\PICC\drivers\string.h   [26-mar-15 12:34  CRC=C4814297]
@@ -181,10 +181,10 @@ Project Files:
     MAX191.h                                                [23-sep-16 09:32  CRC=452BF67F]
     ..\..\..\..\Program Files (x86)\PICC\drivers\math.h     [16-ene-15 10:40  CRC=6A8358B0]
 
-Source signature=0D520336
+Source signature=461DAECF
 Program memory checksum=0000
 Program memory CRC=0000
-Hex file CRC=E136
+Hex file CRC=65C2
 
 Units:
     prueba_RMS (main)

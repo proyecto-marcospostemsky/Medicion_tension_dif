@@ -1,5 +1,5 @@
 ÀÄPrueba_TENSIONRMS
-   ÃÄMAIN  0/472  Ram=4
+   ÃÄMAIN  0/518  Ram=4
    ³  ÃÄ@cinit1  (Inline)  Ram=0
    ³  ÃÄlcd_init  0/92  Ram=0
    ³  ³  ÃÄ@delay_ms1  0/40  Ram=1
@@ -66,8 +66,8 @@
    ³  ³        ÀÄ*
    ³  ÃÄleer_ADC  0/104  Ram=6
    ³  ÃÄ@ITOF  0/56  Ram=2
-   ³  ÃÄ@MULFF  0/242  Ram=11
    ³  ÃÄ@DIVFF  0/346  Ram=14
+   ³  ÃÄ@ADDFF  0/618  Ram=16
    ³  ÃÄ@MULFF  0/242  Ram=11
    ³  ÃÄ@ADDFF  0/618  Ram=16
    ³  ÃÄ@DIVFF  0/346  Ram=14
@@ -99,4 +99,4 @@
    ³  ³  ÀÄLCD_PUTC  0/110  Ram=2
    ³  ³     ÀÄ*
    ³  ÀÄ@delay_ms1  0/40  Ram=1
-   ÀÄinterrtimer_0  0/14  Ram=0
+   ÀÄinterrtimer_0  0/18  Ram=0
